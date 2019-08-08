@@ -1,0 +1,36 @@
+image:
+  file: docker/Dockerfile
+# Context is optional, defaults to an empty context
+  context: docker
+
+# Command to start on workspace startup (optional)
+tasks:
+- command: "npm install"
+
+github:
+  prebuilds:
+    # enable for the master/default branch (defaults to true)
+    master: true
+# enable for all branches in this repo (defaults to false)
+    branches: false
+# enable for pull requests coming from this repo (defaults to true)
+    pullRequests: true
+# enable for pull requests coming from forks (defaults to false)
+    pullRequestsFromForks: true
+# add a "Review in Gitpod" button as a comment to pull requests (defaults to true)
+    addComment: false
+# add a "Review in Gitpod" button to pull requests (defaults to false)
+    addBadge: true
+# add a label once the prebuild is ready to pull requests (defaults to false)
+    addLabel: false
+vscode:
+  extensions:
+    - ktriek.ng-bootstrap-snippets@1.0.0:VUuHjE9V7Q9jWJGHFYuaag==
+    - eamodio.gitlens@9.9.3:4g0pgzmxBH0HkAs5mY8BWQ==
+    - Mikael.Angular-BeastCode@8.0.10:J7aGjVXXDeyuqnhsk+vMYw==
+    - CoenraadS.bracket-pair-colorizer@1.0.61:fqPT1sJEqaEdrfXeYbdW+A==
+    - PKief.material-icon-theme@3.8.1:4hBEEejg04s1Ozsfu12fWQ==
+    - steoates.autoimport@1.5.3:ssEPucpXsRjqSbJX1bW0YA==
+    - esbenp.prettier-vscode@1.9.0:2CbWfKbh7qXJy3Ad4n/XgA==
+    - WakaTime.vscode-wakatime@2.2.0:6ey+5p2egr5T26qMVymY1g==
+    - ms-vscode.vscode-typescript-tslint-plugin@1.2.2:Jw3ra3MlKUzHrWQODXxjUw==
