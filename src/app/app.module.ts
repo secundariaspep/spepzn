@@ -24,6 +24,9 @@ import { environment } from '../environments/environment';
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
 
+import { ListSocioeducComponent } from './components/socioeduc/list-socioeduc/list-socioeduc.component';
+import { ModalSocioeducComponent } from './components/socioeduc/modal-socioeduc/modal-socioeduc.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { AuthService } from "./shared/services/auth.service";
     SignUpComponent,
     DashboardComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    ListSocioeducComponent,
+    ModalSocioeducComponent,
   ],
   imports: [
     BrowserModule,
