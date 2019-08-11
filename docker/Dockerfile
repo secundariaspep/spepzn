@@ -9,7 +9,11 @@ RUN apt-get update && apt-get install -y \
 
 USER gitpod
 
-RUN npm install -g @angular/cli
+RUN npm install -g npm && \
+    # Install Angluar
+    npm install -g @angular/cli && \
+    # Install firebase
+    npm install -g firebase-tools
 
 # Apply user-specific settings
 ENV ZSH_THEME agnoster
