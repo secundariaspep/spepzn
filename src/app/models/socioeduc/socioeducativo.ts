@@ -14,5 +14,5 @@ export interface SocioeducativoInterface {
     ticket?: number,
     ticket_fecha?: string,
     userUid?: string,
-    id?: string,
+    seUid?: string,
 }

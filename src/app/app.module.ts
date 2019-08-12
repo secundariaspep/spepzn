@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 // Reactive Form
 import { ReactiveFormsModule } from "@angular/forms";
+// Driven Form
+import { FormsModule} from '@angular/forms';
 
 // App routing modules
 import { AppRoutingModule } from './shared/routing/app-routing.module';
@@ -45,7 +47,8 @@ import { ModalSocioeducComponent } from './components/socioeduc/modal-socioeduc/
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
