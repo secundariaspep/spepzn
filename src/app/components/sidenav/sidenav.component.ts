@@ -1,14 +1,13 @@
 import { Component, OnInit, NgZone } from '@angular/core';
-import { AuthService } from "../../shared/services/auth.service";
-import { Router } from "@angular/router";
-
+import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class SidenavComponent implements OnInit {
     public isLogged: boolean = false;
 
   constructor(
@@ -32,5 +31,4 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
-
 }

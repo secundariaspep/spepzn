@@ -28,6 +28,8 @@ import { AuthService } from "./shared/services/auth.service";
 
 import { ListSocioeducComponent } from './components/socioeduc/list-socioeduc/list-socioeduc.component';
 import { ModalSocioeducComponent } from './components/socioeduc/modal-socioeduc/modal-socioeduc.component';
+import { TopnavComponent } from './components/topnav/topnav.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { ModalSocioeducComponent } from './components/socioeduc/modal-socioeduc/
     VerifyEmailComponent,
     ListSocioeducComponent,
     ModalSocioeducComponent,
+    TopnavComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

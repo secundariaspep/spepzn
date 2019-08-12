@@ -15,7 +15,7 @@ export class ApiSocioeducativoService {
   private socioeducDoc: AngularFirestoreDocument<SocioeducativoInterface>;
   private socioeduc: Observable<SocioeducativoInterface>;
   public selectSocioeduc: SocioeducativoInterface = {
-    id: null
+    seUid: null
   };
 
   getAllSocioeduc() {
@@ -24,7 +24,7 @@ export class ApiSocioeducativoService {
       .pipe(map(change => {
         return change.map(action => {
           const data = action.payload.doc.data() as SocioeducativoInterface;
-          data.id = action.payload.doc.id;
+          data.seUid = action.payload.doc.id;
           return data;
         });
       }));
@@ -37,7 +37,7 @@ export class ApiSocioeducativoService {
         return null;
       } else {
         const data = action.payload.data() as SocioeducativoInterface;
-        data.id = action.payload.id;
+        data.seUid = action.payload.id;
         return data;
       }
     }));
@@ -47,7 +47,7 @@ export class ApiSocioeducativoService {
     this.socioeducCollection.add(socioeduc);
   }
   updateSocioeduc(socioeduc: SocioeducativoInterface): void {
-    let idSocioeduc = socioeduc.id;
+    let idSocioeduc = socioeduc.seUid;
     this.socioeducDoc = this.asf.doc<SocioeducativoInterface>(`socioeducs/${idSocioeduc}`);
     this.socioeducDoc.update(socioeduc);
   }
