@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, Input, ViewChild } from '@angular/core';
-import { ApiSocioeducativoService } from 'src/app/shared/services/socioeduc/api-socioeducativo.service';
+import { ApiSocioeducativoService } from '../../../shared/services/socioeduc/api-socioeducativo.service';
 import { NgForm } from '@angular/forms';
 
 @Component({

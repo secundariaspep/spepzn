@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
-  { path: 'socioeduc/list', component: ListSocioeducComponent, canActivate: [SecureInnerPagesGuard]},
+  { path: 'socioeduc/list', component: ListSocioeducComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

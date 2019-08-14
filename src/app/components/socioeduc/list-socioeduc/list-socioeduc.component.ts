@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiSocioeducativoService } from '../../../shared/services/socioeduc/api-socioeducativo.service';
 import { AuthService } from '../../../shared/services/auth.service';
 import { SocioeducativoInterface } from '../../../models/socioeduc/socioeducativo';
+import { TopnavService } from '../../../shared/services/topnav.service';
 
 @Component({
   selector: 'app-list-socioeduc',
@@ -10,12 +11,17 @@ import { SocioeducativoInterface } from '../../../models/socioeduc/socioeducativ
 })
 export class ListSocioeducComponent implements OnInit {
 
-  constructor( private dataApi: ApiSocioeducativoService, private authService: AuthService) { }
+  constructor(
+      private dataApi: ApiSocioeducativoService,
+      private authService: AuthService,
+      private topnavService: TopnavService
+    ) { }
   private socioeducs: SocioeducativoInterface[];
   public isAdmin: any = null;
   public userUid: string = null;
 
   ngOnInit() {
+      this.topnavService.setSection('Socio Educativo');
     this.getListSocioeducs();
     this.getCurrentUser();
   }
