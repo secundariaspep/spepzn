@@ -30,6 +30,7 @@ import { ListSocioeducComponent } from './components/socioeduc/list-socioeduc/li
 import { ModalSocioeducComponent } from './components/socioeduc/modal-socioeduc/modal-socioeduc.component';
 import { TopnavComponent } from './components/topnav/topnav.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { ModalUpdateSocioeducComponent } from './components/socioeduc/modal-update-socioeduc/modal-update-socioeduc.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
     ModalSocioeducComponent,
     TopnavComponent,
     SidenavComponent,
+    ModalUpdateSocioeducComponent,
   ],
   imports: [
     BrowserModule,

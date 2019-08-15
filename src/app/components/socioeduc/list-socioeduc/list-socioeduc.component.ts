@@ -51,8 +51,11 @@ export class ListSocioeducComponent implements OnInit {
     }
   }
 
+  onPreEditSocioeduc(socioeduc: SocioeducativoInterface) {
+    this.dataApi.selectSocioeduc = Object.assign({}, socioeduc);
+  }
+
   onPreUpdateSocioeduc(socioeduc: SocioeducativoInterface) {
-    console.log('SOCIOEDUC', socioeduc);
     this.dataApi.selectSocioeduc = Object.assign({}, socioeduc);
   }
 

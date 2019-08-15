@@ -19,7 +19,7 @@ export class ApiSocioeducativoService {
   };
 
   getAllSocioeduc() {
-    this.socioeducCollection = this.asf.collection<SocioeducativoInterface>('socioeduc');
+    this.socioeducCollection = this.asf.collection<SocioeducativoInterface>('socioeducativo');
     return this.socioeducs = this.socioeducCollection.snapshotChanges()
       .pipe(map(change => {
         return change.map(action => {
@@ -31,7 +31,7 @@ export class ApiSocioeducativoService {
   }
 
   getOneSocioeduc(idSocioeduc: string) {
-    this.socioeducDoc = this.asf.doc<SocioeducativoInterface>(`socioeducs/${idSocioeduc}`);
+    this.socioeducDoc = this.asf.doc<SocioeducativoInterface>(`socioeducativo/${idSocioeduc}`);
     return this.socioeduc = this.socioeducDoc.snapshotChanges().pipe(map(action => {
       if (action.payload.exists === false) {
         return null;
@@ -48,11 +48,11 @@ export class ApiSocioeducativoService {
   }
   updateSocioeduc(socioeduc: SocioeducativoInterface): void {
     let idSocioeduc = socioeduc.seUid;
-    this.socioeducDoc = this.asf.doc<SocioeducativoInterface>(`socioeducs/${idSocioeduc}`);
+    this.socioeducDoc = this.asf.doc<SocioeducativoInterface>(`socioeducativo/${idSocioeduc}`);
     this.socioeducDoc.update(socioeduc);
   }
   deleteSocioeduc(idSocioeduc: string): void {
-    this.socioeducDoc = this.asf.doc<SocioeducativoInterface>(`socioeducs/${idSocioeduc}`);
+    this.socioeducDoc = this.asf.doc<SocioeducativoInterface>(`socioeducativo/${idSocioeduc}`);
     this.socioeducDoc.delete();
   }
 }

@@ -1,0 +1,33 @@
+<div class="modal fade" id="modalUpdateSocioeduc" tabindex="-1" role="dialog" aria-labelledby="example2ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="example2ModalLabel">
+          {{ !this.dataApi.selectSocioeduc.seUid ? 'Nueva Actualización' : 'Editar'}}
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="formUpdateSocioeduc" #formUpdateSocioeduc="ngForm" (ngSubmit)="onSaveUpdateSocioeduc(formUpdateSocioeduc)">
+          <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectSocioeduc.seUid">
+          <input type="hidden" name="userUid" [value]="userUid">
+          <div class="form-group">
+            <label for="fecha" class="col-form-label">Fecha:</label>
+            <input type="text" class="form-control" name="escuela" [(ngModel)]="this.dataApi.selectSocioeduc.fecha">
+          </div>
+          <div class="form-group">
+            <label for="actualizacion" class="col-form-label">Actualizacion:</label>
+            <textarea class="form-control" name="actualizacion" [(ngModel)]="this.dataApi.selectSocioeduc.actualizacion"></textarea>
+          </div>
+          <div class="modal-footer">
+
+            <button type="submit" class="btn btn-primary">Guardar Caso</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

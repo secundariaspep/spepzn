@@ -11,7 +11,7 @@
 
 <section class="row mt-5">
   <div class="col">
-    <button class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalSocioeduc">New socioeduc</button>
+    <button class="btn btn-primary float-right mb-3" data-toggle="modal" data-target="#modalSocioeduc">Nuevo caso</button>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -21,6 +21,7 @@
           <th scope="col">Alumno</th>
           <th scope="col">Ticket</th>
           <th scope="col">Circuito</th>
+          <th scope="col">&nbsp;</th>
           <th scope="col">&nbsp;</th>
           <th scope="col">&nbsp;</th>
         </tr>
@@ -34,19 +35,27 @@
           <td>{{socioeduc.ticket}}</td>
           <td>{{socioeduc.circuito}}</td>
           <td *ngIf="socioeduc.userUid == userUid || isAdmin == true; else noOwner">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#modalSocioeduc" (click)="onPreUpdatesocioeduc(socioeduc)">Update</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modalSocioeduc" (click)="onPreEditSocioeduc(socioeduc)">Editar</button>
           </td>
           <ng-template #noOwner>
             <td>
-              <button class="btn btn-secondary" disabled="true">Update</button>
+              <button class="btn btn-secondary" disabled="true">Editar</button>
             </td>
           </ng-template>
           <td *ngIf="isAdmin == true; else noAdmin">
-            <button class="btn btn-danger" (click)="onDeletesocioeduc(socioeduc.id)">Delete</button>
+            <button class="btn btn-info" (click)="onPreUpdateSocioeduc(socioeduc.seUid)">Actualizar</button>
           </td>
           <ng-template #noAdmin>
             <td>
-              <button class="btn btn-danger" disabled="true">Delete</button>
+              <button class="btn btn-info" disabled="true">Actualizar</button>
+            </td>
+          </ng-template>
+          <td *ngIf="isAdmin == true; else noAdmin">
+            <button class="btn btn-danger" (click)="onDeletesocioeduc(socioeduc.seUid)">Eliminar</button>
+          </td>
+          <ng-template #noAdmin>
+            <td>
+              <button class="btn btn-danger" disabled="true">Eliminar</button>
             </td>
           </ng-template>
         </tr>

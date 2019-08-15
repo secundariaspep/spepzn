@@ -1,14 +1,13 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { ApiSocioeducativoService } from '../../../shared/services/socioeduc/api-socioeducativo.service';
-import { SocioeducativoInterface } from '../../../models/socioeduc/socioeducativo';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-modal-socioeduc',
-  templateUrl: './modal-socioeduc.component.html',
-  styleUrls: ['./modal-socioeduc.component.css']
+  selector: 'app-modal-update-socioeduc',
+  templateUrl: './modal-update-socioeduc.component.html',
+  styleUrls: ['./modal-update-socioeduc.component.css']
 })
-export class ModalSocioeducComponent implements OnInit {
+export class ModalUpdateSocioeducComponent implements OnInit {
 
   constructor(private dataApi: ApiSocioeducativoService) { }
   @ViewChild('btnClose',{static:true}) btnClose: ElementRef;
@@ -16,7 +15,7 @@ export class ModalSocioeducComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSaveSocioeduc(socioeducForm: NgForm): void {
+  onSaveUpdateSocioeduc(socioeducForm: NgForm): void {
     if (socioeducForm.value.id == null) {
       // New
       socioeducForm.value.userUid = this.userUid;
@@ -28,6 +27,5 @@ export class ModalSocioeducComponent implements OnInit {
     socioeducForm.resetForm();
     this.btnClose.nativeElement.click();
   }
-
 
 }
