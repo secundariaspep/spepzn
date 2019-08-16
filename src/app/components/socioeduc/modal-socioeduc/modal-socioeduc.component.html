@@ -11,16 +11,19 @@
       </div>
       <div class="modal-body">
         <form name="formSocioeduc" #formSocioeduc="ngForm" (ngSubmit)="onSaveSocioeduc(formSocioeduc)">
-          <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectSocioeduc.seUid">
+          <input type="hidden" name="seUid" [(ngModel)]="this.dataApi.selectSocioeduc.seUid">
           <input type="hidden" name="userUid" [value]="userUid">
-          <div class="form-group">
-            <label for="escuela" class="col-form-label">Escuela:</label>
-            <input type="text" class="form-control" name="escuela" [(ngModel)]="this.dataApi.selectSocioeduc.escuela">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="escuela" class="col-form-label">Escuela:</label>
+                <input type="text" class="form-control" name="escuela" [(ngModel)]="this.dataApi.selectSocioeduc.escuela">
+            </div>
+
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="circuito">Circuito</label>
-              <select name="idioma" class="form-control" [(ngModel)]="this.dataApi.selectSocioeduc.circuito">
+              <select name="circuito" class="form-control" [(ngModel)]="this.dataApi.selectSocioeduc.circuito">
                 <option value="1">Circuito 1</option>
                 <option value="2">Circuito 2</option>
                 <option value="3">Circuito 3</option>
@@ -29,19 +32,60 @@
               </select>
             </div>
             <div class="form-group col-md-6">
-              <label for="alumno_dni">Alumno DNI</label>
-              <input type="text" name="precio" class="form-control" placeholder="00000000" [(ngModel)]="this.dataApi.selectSocioeduc.alumno_dni">
+                <label for="alta">Fecha:</label>
+                <input type="text" placeholder="Fecha alta" class="form-control" name="alta" bsDatepicker [(ngModel)]="this.dataApi.selectSocioeduc.alta">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
+              <label for="curso">Curso</label>
+              <input type="text" name="curso" class="form-control" placeholder="00 XX" [(ngModel)]="this.dataApi.selectSocioeduc.curso">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="alumno_dni">Alumno DNI</label>
+              <input type="text" name="alumno_dni" class="form-control" placeholder="00000000" [(ngModel)]="this.dataApi.selectSocioeduc.alumno_dni">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
               <label for="alumno">Alumno</label>
               <input type="text" name="alumno" class="form-control" placeholder="Apellido y Nombres" [(ngModel)]="this.dataApi.selectSocioeduc.alumno">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="ticket">Ticket</label>
+              <input type="text" name="ticket" class="form-control" placeholder="000000" [(ngModel)]="this.dataApi.selectSocioeduc.ticket">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="ticket_fecha">Ticket fecha</label>
+              <input type="text" name="ticket_fecha" class="form-control" placeholder="00-00-0000" bsDatepicker [(ngModel)]="this.dataApi.selectSocioeduc.ticket_fecha">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="region">Regional</label>
+              <select name="region" class="form-control" [(ngModel)]="this.dataApi.selectSocioeduc.region">
+                <option value="1">Regional I</option>
+                <option value="2">Regional II</option>
+                <option value="3">Regional III</option>
+                <option value="4">Regional IV</option>
+                <option value="8">Regional VIII</option>
+                <option value="9">Regional IX</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="region_fecha">Fecha ingreso en Regional</label>
+              <input type="text" name="region_fecha" class="form-control" placeholder="00-00-0000" bsDatepicker [(ngModel)]="this.dataApi.selectSocioeduc.region_fecha">
             </div>
           </div>
           <div class="form-group">
             <label for="descripcion" class="col-form-label">Descripcion:</label>
             <textarea class="form-control" name="descripcion" [(ngModel)]="this.dataApi.selectSocioeduc.descripcion"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="observaciones" class="col-form-label">Observaciones:</label>
+            <textarea class="form-control" name="observaciones" [(ngModel)]="this.dataApi.selectSocioeduc.observaciones"></textarea>
           </div>
           <div class="modal-footer">
 

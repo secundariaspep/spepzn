@@ -45,7 +45,7 @@ export class ListSocioeducComponent implements OnInit {
   }
 
   onDeleteSocioeduc(idSocioeduc: string): void {
-    const confirmacion = confirm('Are you sure?');
+    const confirmacion = confirm('Está seguro que quiere eliminar el caso? Se borrarán todos los datos.');
     if (confirmacion) {
       this.dataApi.deleteSocioeduc(idSocioeduc);
     }

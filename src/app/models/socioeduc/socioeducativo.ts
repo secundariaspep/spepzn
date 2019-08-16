@@ -7,7 +7,7 @@ export interface SocioeducativoInterface {
     circuito?: number,
     curso?: string,
     descripcion?: string,
-    observacion?: string,
+    observaciones?: string,
     region?: number,
     region_fecha?: string,
     fecha_jefatura?: string,

@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 // Reactive Form
 import { ReactiveFormsModule } from "@angular/forms";
 // Driven Form
 import { FormsModule} from '@angular/forms';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 // App routing modules
 import { AppRoutingModule } from './shared/routing/app-routing.module';
@@ -54,7 +56,9 @@ import { ModalUpdateSocioeducComponent } from './components/socioeduc/modal-upda
     AngularFireAuthModule,
     AngularFirestoreModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -51,7 +51,7 @@
             </td>
           </ng-template>
           <td *ngIf="isAdmin == true; else noAdmin">
-            <button class="btn btn-danger" (click)="onDeletesocioeduc(socioeduc.seUid)">Eliminar</button>
+            <button class="btn btn-danger" (click)="onDeleteSocioeduc(socioeduc.seUid)">Eliminar</button>
           </td>
           <ng-template #noAdmin>
             <td>

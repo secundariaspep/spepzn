@@ -46,11 +46,13 @@ export class ApiSocioeducativoService {
   addSocioeduc(socioeduc: SocioeducativoInterface): void {
     this.socioeducCollection.add(socioeduc);
   }
+
   updateSocioeduc(socioeduc: SocioeducativoInterface): void {
     let idSocioeduc = socioeduc.seUid;
     this.socioeducDoc = this.asf.doc<SocioeducativoInterface>(`socioeducativo/${idSocioeduc}`);
     this.socioeducDoc.update(socioeduc);
   }
+
   deleteSocioeduc(idSocioeduc: string): void {
     this.socioeducDoc = this.asf.doc<SocioeducativoInterface>(`socioeducativo/${idSocioeduc}`);
     this.socioeducDoc.delete();

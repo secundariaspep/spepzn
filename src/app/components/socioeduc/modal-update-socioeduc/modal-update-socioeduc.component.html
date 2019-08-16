@@ -11,7 +11,8 @@
       </div>
       <div class="modal-body">
         <form name="formUpdateSocioeduc" #formUpdateSocioeduc="ngForm" (ngSubmit)="onSaveUpdateSocioeduc(formUpdateSocioeduc)">
-          <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectSocioeduc.seUid">
+          <input type="hidden" name="seUid" [(ngModel)]="this.dataApi.selectSocioeduc.seUid">
+          <input type="hidden" name="id" [(ngModel)]="this.dataApi.selectSocioeduc.id">
           <input type="hidden" name="userUid" [value]="userUid">
           <div class="form-group">
             <label for="fecha" class="col-form-label">Fecha:</label>
