@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
-import { ApiSocioeducativoService } from '../../../shared/services/socioeduc/api-socioeducativo.service';
+import { ApiSocioeducativoActualizacionesService } from '../../../shared/services/socioeduc/api-socioeducativoactualizaciones.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -9,22 +9,22 @@ import { NgForm } from '@angular/forms';
 })
 export class ModalUpdateSocioeducComponent implements OnInit {
 
-  constructor(private dataApi: ApiSocioeducativoService) { }
+  constructor(private dataApi: ApiSocioeducativoActualizacionesService) { }
   @ViewChild('btnClose',{static:true}) btnClose: ElementRef;
   @Input() userUid: string;
   ngOnInit() {
   }
 
-  onSaveUpdateSocioeduc(socioeducForm: NgForm): void {
-    if (socioeducForm.value.id == null) {
+  onSaveUpdateSocioeduc(formUpdateSocioeduc: NgForm): void {
+    if (formUpdateSocioeduc.value.id == null) {
       // New
-      socioeducForm.value.userUid = this.userUid;
-      this.dataApi.addSocioeduc(socioeducForm.value);
+      formUpdateSocioeduc.value.userUid = this.userUid;
+      this.dataApi.addSocioeduc(formUpdateSocioeduc.value);
     } else {
       // Update
-      this.dataApi.updateSocioeduc(socioeducForm.value);
+      this.dataApi.updateSocioeduc(formUpdateSocioeduc.value);
     }
-    socioeducForm.resetForm();
+    formUpdateSocioeduc.resetForm();
     this.btnClose.nativeElement.click();
   }
 

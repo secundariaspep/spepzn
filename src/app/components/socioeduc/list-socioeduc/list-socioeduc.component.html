@@ -42,8 +42,9 @@
               <button class="btn btn-secondary" disabled="true">Editar</button>
             </td>
           </ng-template>
-          <td *ngIf="isAdmin == true; else noAdmin">
-            <button class="btn btn-info" (click)="onPreUpdateSocioeduc(socioeduc.seUid)">Actualizar</button>
+          <td *ngIf="socioeduc.userUid == userUid || isAdmin == true; else noOwner">
+            <button class="btn btn-info" data-toggle="modal" data-target="#modalUpdateSocioeduc" (click)="onPreUpdateSocioeduc(socioeduc.seUid)">Actualizar</button>
+
           </td>
           <ng-template #noAdmin>
             <td>
@@ -64,7 +65,7 @@
   </div>
 </section>
 <app-modal-socioeduc [userUid]="userUid"></app-modal-socioeduc>
-
+<app-modal-update-socioeduc [userUid]="userUid"></app-modal-update-socioeduc>
       </div>
     </main>
   </div>

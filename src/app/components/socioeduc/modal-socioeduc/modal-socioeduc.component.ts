@@ -18,7 +18,7 @@ export class ModalSocioeducComponent implements OnInit {
 
   onSaveSocioeduc(socioeducForm: NgForm): void {
       console.log(socioeducForm.value);
-    if (socioeducForm.value.id == null) {
+    if (socioeducForm.value.seUid == null) {
       // New
       socioeducForm.value.userUid = this.userUid;
       this.dataApi.addSocioeduc(socioeducForm.value);

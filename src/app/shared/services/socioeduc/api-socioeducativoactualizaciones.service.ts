@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { SocioeducativoActualizacionesInterface } from 'src/app/models/socioeduc/socioeducativoactualizaciones';
+import { SocioeducativoActualizacionesInterface } from '../../../models/socioeduc/socioeducativoactualizaciones';
 import { Observable } from 'rxjs/internal/Observable';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +17,45 @@ export class ApiSocioeducativoActualizacionesService {
   private actualizacion: Observable<SocioeducativoActualizacionesInterface>;
   public selectedActualizacion: SocioeducativoActualizacionesInterface = {
       seUid: null
+  }
+
+  getAllActualizaciones(){
+      this.actualizacionCollection = this.asf.collection<SocioeducativoActualizacionesInterface>('actualizacion');
+      return this.actualizaciones = this.actualizacionCollection.snapshotChanges()
+        .pipe(map(change => {
+            return change.map(action => {
+                const data = action.payload.doc.data() as SocioeducativoActualizacionesInterface;
+                data.seUid = action.payload.doc.id;
+                return data;
+            })
+        }))
+  }
+
+  getOneSocioeduc(idSocioeduc: string) {
+    this.actualizacionDoc = this.asf.doc<SocioeducativoActualizacionesInterface>(`socioeducativoactualizaciones/${idSocioeduc}`);
+    return this.actualizacion = this.actualizacionDoc.snapshotChanges().pipe(map(action => {
+      if (action.payload.exists === false) {
+        return null;
+      } else {
+        const data = action.payload.data() as SocioeducativoActualizacionesInterface;
+        data.seUid = action.payload.id;
+        return data;
+      }
+    }));
+  }
+
+  addSocioeduc(actualizacion: SocioeducativoActualizacionesInterface): void {
+    this.actualizacionCollection.add(actualizacion);
+  }
+
+  updateSocioeduc(actualizacion: SocioeducativoActualizacionesInterface): void {
+    let idSocioeduc = actualizacion.seUid;
+    this.actualizacionDoc = this.asf.doc<SocioeducativoActualizacionesInterface>(`socioeducativoactualizaciones/${idSocioeduc}`);
+    this.actualizacionDoc.update(actualizacion);
+  }
+
+  deleteSocioeduc(idSocioeduc: string): void {
+    this.actualizacionDoc = this.asf.doc<SocioeducativoActualizacionesInterface>(`socioeducativoactualizaciones/${idSocioeduc}`);
+    this.actualizacionDoc.delete();
   }
 }
