@@ -43,7 +43,7 @@
             </td>
           </ng-template>
           <td *ngIf="socioeduc.userUid == userUid || isAdmin == true; else noOwner">
-            <button class="btn btn-info" data-toggle="modal" data-target="#modalUpdateSocioeduc" (click)="onPreUpdateSocioeduc(socioeduc.seUid)">Actualizar</button>
+            <button class="btn btn-info" data-toggle="modal" data-target="#modalUpdateSocioeduc" (click)="onPreUpdateSocioeduc(socioeduc)">Actualizar</button>
 
           </td>
           <ng-template #noAdmin>
@@ -65,7 +65,7 @@
   </div>
 </section>
 <app-modal-socioeduc [userUid]="userUid"></app-modal-socioeduc>
-<app-modal-update-socioeduc [userUid]="userUid"></app-modal-update-socioeduc>
+<app-modal-update-socioeduc [userUid]="userUid" ></app-modal-update-socioeduc>
       </div>
     </main>
   </div>

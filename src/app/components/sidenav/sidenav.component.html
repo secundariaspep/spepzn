@@ -3,9 +3,14 @@
     <nav class="col-md-2 d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
-        <li class="nav-item" *ngIf="isLogged">
+          <li class="nav-item" *ngIf="isLogged">
             <a class="nav-link" routerLink="/socioeduc/list">
               <i class="fas fa-users"></i>Socio Educativo
+            </a>
+          </li>
+          <li class="nav-item" *ngIf="isLogged">
+            <a class="nav-link" routerLink="/socioeduc/lista">
+              <i class="fas fa-users"></i>Lista Socio Educativo
             </a>
           </li>
           <li class="nav-item" *ngIf="isLogged">

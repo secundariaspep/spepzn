@@ -1,1 +1,22 @@
-<router-outlet></router-outlet>
+<app-topnav></app-topnav>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar navigation -->
+    <app-sidenav></app-sidenav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <div class="inner-adjust">
+
+        <section class="row mt-5">
+            <router-outlet></router-outlet>
+        </section>
+    </div>
+    </main>
+    <!-- Notifications -->
+    <app-notify></app-notify>
+
+  </div>
+</div>

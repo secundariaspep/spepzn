@@ -31,5 +31,6 @@ vscode:
     - PKief.material-icon-theme@3.8.1:4hBEEejg04s1Ozsfu12fWQ==
     - steoates.autoimport@1.5.3:ssEPucpXsRjqSbJX1bW0YA==
     - esbenp.prettier-vscode@1.9.0:2CbWfKbh7qXJy3Ad4n/XgA==
-    - WakaTime.vscode-wakatime@2.2.0:6ey+5p2egr5T26qMVymY1g==
     - ms-vscode.vscode-typescript-tslint-plugin@1.2.2:Jw3ra3MlKUzHrWQODXxjUw==
+    - softwaredotcom.swdc-vscode@1.1.29:wMSd8WGlhnel1EhB8a47UA==
+    - WakaTime.vscode-wakatime@2.2.0:6ey+5p2egr5T26qMVymY1g==

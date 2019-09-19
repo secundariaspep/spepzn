@@ -12,13 +12,14 @@ import { TopnavService } from '../../../shared/services/topnav.service';
 export class ListSocioeducComponent implements OnInit {
 
   constructor(
-      private dataApi: ApiSocioeducativoService,
+      public dataApi: ApiSocioeducativoService,
       private authService: AuthService,
       private topnavService: TopnavService
     ) { }
   private socioeducs: SocioeducativoInterface[];
   public isAdmin: any = null;
   public userUid: string = null;
+  public seUid: string = null;
 
   ngOnInit() {
       this.topnavService.setSection('Socio Educativo');

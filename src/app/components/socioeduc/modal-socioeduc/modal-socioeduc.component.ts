@@ -10,14 +10,13 @@ import { NgForm } from '@angular/forms';
 })
 export class ModalSocioeducComponent implements OnInit {
 
-  constructor(private dataApi: ApiSocioeducativoService) { }
+  constructor(public dataApi: ApiSocioeducativoService) { }
   @ViewChild('btnClose',{static:true}) btnClose: ElementRef;
   @Input() userUid: string;
   ngOnInit() {
   }
 
   onSaveSocioeduc(socioeducForm: NgForm): void {
-      console.log(socioeducForm.value);
     if (socioeducForm.value.seUid == null) {
       // New
       socioeducForm.value.userUid = this.userUid;

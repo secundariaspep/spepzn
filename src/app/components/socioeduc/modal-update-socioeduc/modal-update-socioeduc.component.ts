@@ -9,20 +9,22 @@ import { NgForm } from '@angular/forms';
 })
 export class ModalUpdateSocioeducComponent implements OnInit {
 
-  constructor(private dataApi: ApiSocioeducativoActualizacionesService) { }
+  constructor(public dataApi: ApiSocioeducativoActualizacionesService) { }
   @ViewChild('btnClose',{static:true}) btnClose: ElementRef;
   @Input() userUid: string;
+  @Input() seUid: string;
   ngOnInit() {
   }
 
   onSaveUpdateSocioeduc(formUpdateSocioeduc: NgForm): void {
+      console.log(formUpdateSocioeduc.value);
     if (formUpdateSocioeduc.value.id == null) {
       // New
       formUpdateSocioeduc.value.userUid = this.userUid;
-      this.dataApi.addSocioeduc(formUpdateSocioeduc.value);
+      this.dataApi.addActualizacion(formUpdateSocioeduc.value);
     } else {
       // Update
-      this.dataApi.updateSocioeduc(formUpdateSocioeduc.value);
+      this.dataApi.updateActualizacion(formUpdateSocioeduc.value);
     }
     formUpdateSocioeduc.resetForm();
     this.btnClose.nativeElement.click();
