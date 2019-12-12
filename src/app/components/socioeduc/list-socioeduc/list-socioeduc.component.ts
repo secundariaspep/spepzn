@@ -34,9 +34,9 @@ export class ListSocioeducComponent implements OnInit {
         this.authService.isUserAdmin(this.userUid).subscribe(userRole => {
           this.isAdmin = Object.assign({}, userRole.roles).hasOwnProperty('admin');
           // this.isAdmin = true;
-        })
+        });
       }
-    })
+    });
   }
   getListSocioeducs() {
     this.dataApi.getAllSocioeduc()

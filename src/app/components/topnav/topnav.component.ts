@@ -7,8 +7,8 @@ import { TopnavService } from '../../shared/services/topnav.service';
   styleUrls: ['./topnav.component.css']
 })
 export class TopnavComponent implements OnInit {
-    public title: string = 'SPEP Zona Norte';
-    public section: string = '';
+    public title = 'SPEP Zona Norte';
+    public section = '';
 
   constructor(private topnavService: TopnavService) { }
 

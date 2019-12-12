@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-    public isLogged: boolean = false;
+    public isLogged = false;
 
   constructor(
     public authService: AuthService,

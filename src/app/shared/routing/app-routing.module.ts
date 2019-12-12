@@ -9,10 +9,9 @@ import { ForgotPasswordComponent } from '../../components/forgot-password/forgot
 import { VerifyEmailComponent } from '../../components/verify-email/verify-email.component';
 
 // Import canActivate guard services
-import { AuthGuard } from "../../shared/guard/auth.guard";
-import { SecureInnerPagesGuard } from "../../shared/guard/secure-inner-pages.guard";
+import { AuthGuard } from '../../shared/guard/auth.guard';
+import { SecureInnerPagesGuard } from '../../shared/guard/secure-inner-pages.guard';
 import { ListSocioeducComponent } from '../../components/socioeduc/list-socioeduc/list-socioeduc.component';
-import { ListaComponent } from 'src/app/components/socioeduc/lista/lista.component';
 
 // Include route guard in routes array
 const routes: Routes = [
@@ -22,8 +21,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent, canActivate: [SecureInnerPagesGuard] },
-  { path: 'socioeduc/list', component: ListSocioeducComponent, canActivate: [AuthGuard]},
-  { path: 'socioeduc/lista', component: ListaComponent, canActivate: [AuthGuard]},
+  { path: 'socioeduc/list', component: ListSocioeducComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({
